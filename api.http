@@ -1,0 +1,29 @@
+GET http://127.0.0.1:3000/book HTTP/1.1
+content-type: application/json
+
+{}
+
+###
+POST http://127.0.0.1:3000/book HTTP/1.1
+content-type: application/json
+
+{
+    "title": "test-title",
+    "author": "test-author"
+}
+
+###
+
+GET http://127.0.0.1:3000/user HTTP/1.1
+content-type: application/json
+
+{}
+
+###
+POST http://127.0.0.1:3000/user HTTP/1.1
+content-type: application/json
+
+{
+    "name": "test-name",
+    "age": 29
+}
