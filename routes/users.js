@@ -1,0 +1,32 @@
+const express = require('express');
+const router = express.Router();
+
+let temp = [
+  makeData('mung1', 1),
+  makeData('mung2', 2),
+  makeData('mung3', 3),
+  makeData('mung4', 4),
+]
+
+function makeData(name, age) {
+  return {
+    name, age
+  }
+}
+
+router.get('/', function(req, res, next) {
+  return res.status(200).json({
+    total: temp.length,
+    results: temp
+  })
+});
+
+router.post('/', (req, res) => {
+  let { name, age } = req.body;
+  let data = makeData(name, age);
+  temp.push(data);
+
+  return res.status(201).json(data);
+})
+
+module.exports = router;
