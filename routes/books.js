@@ -19,6 +19,14 @@ router.get('/', function(req, res, next) {
   return res.status(200).json(temp)
 });
 
+router.get('/:id', function(req, res, next) {
+  let {id} = req.params;
+  if (temp.length -1 < id) {
+    return res.status(404).json({});  
+  }
+  return res.status(200).json(temp[id]);
+});
+
 router.post('/', (req, res) => {
   let { title, author } = req.body;
   let data = makeData(title, author);

@@ -4,6 +4,13 @@ content-type: application/json
 {}
 
 ###
+
+GET http://127.0.0.1:3000/book/1 HTTP/1.1
+content-type: application/json
+
+{}
+
+###
 POST http://127.0.0.1:3000/book HTTP/1.1
 content-type: application/json
 
