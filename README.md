@@ -12,3 +12,10 @@
 
 해당 서버의 스펙은 `api.http` 명시되어 있으며 Visual Studio Code의 `RestClient` 플러그인으로 사용가능 합니다.
 
+* run
+
+```
+$ npm i
+
+$ npm start
+```
