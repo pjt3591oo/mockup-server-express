@@ -4,29 +4,39 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var socket = require('../socket');
-var debug = require('debug')('temp-server:server');
-var http = require('http');
+const app = require('../app');
+const socket = require('../socket');
+const grpc = require('../grpc');
+const debug = require('debug')('temp-server:server');
+const http = require('http');
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
+const HTTP_PORT = normalizePort(process.env.PORT || '3000');
+const GRPC_PORT = normalizePort(process.env.GRPC_PORT || '50051');
+
+app.set('port', HTTP_PORT);
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+const server = http.createServer(app);
 socket(server);
+grpc();
+
+console.log(`\u001b[1;32m📗: HTTP      server port on : ${HTTP_PORT}`)
+console.log(`\u001b[1;32m📗: WebSocket server port on : ${HTTP_PORT}`)
+console.log(`\u001b[1;32m📗: gRPC      server port on : ${GRPC_PORT}`)
+console.log('\033[37m')
+
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(HTTP_PORT);
 server.on('error', onError);
 server.on('listening', onListening);
 
