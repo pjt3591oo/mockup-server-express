@@ -14,6 +14,10 @@ function makeData(name, age) {
   }
 }
 
+router.get('/page', function(req, res, next) {
+  return res.render('user', {});
+})
+
 router.get('/', function(req, res, next) {
   return res.status(200).json({
     total: temp.length,

@@ -14,6 +14,10 @@ function makeData(title, author) {
   }
 }
 
+router.get('/page', function(req, res, next) {
+  return res.render('book', {});
+})
+
 router.get('/', function(req, res, next) {
   console.log(req.headers)
   return res.status(200).json(temp)
