@@ -34,3 +34,117 @@ content-type: application/json
     "name": "test-name",
     "age": 29
 }
+
+###
+
+GET http://127.0.0.1:3000/status/2xx/200 HTTP/1.1
+content-type: application/json
+
+{}
+
+###
+
+POST http://127.0.0.1:3000/status/2xx/200 HTTP/1.1
+content-type: application/json
+
+{}
+
+###
+
+GET http://127.0.0.1:3000/status/2xx/201 HTTP/1.1
+content-type: application/json
+
+{}
+
+###
+
+POST http://127.0.0.1:3000/status/2xx/201 HTTP/1.1
+content-type: application/json
+
+{}
+
+###
+
+GET http://127.0.0.1:3000/status/4xx/400 HTTP/1.1
+content-type: application/json
+
+{}
+
+###
+
+POST http://127.0.0.1:3000/status/4xx/400 HTTP/1.1
+content-type: application/json
+
+{}
+
+###
+
+GET http://127.0.0.1:3000/status/4xx/401 HTTP/1.1
+content-type: application/json
+
+{}
+
+###
+
+POST http://127.0.0.1:3000/status/4xx/401 HTTP/1.1
+content-type: application/json
+
+{}
+
+###
+
+GET http://127.0.0.1:3000/status/4xx/403 HTTP/1.1
+content-type: application/json
+
+{}
+
+###
+
+POST http://127.0.0.1:3000/status/4xx/403 HTTP/1.1
+content-type: application/json
+
+{}
+
+###
+
+GET http://127.0.0.1:3000/status/5xx/500 HTTP/1.1
+content-type: application/json
+
+{}
+
+###
+
+POST http://127.0.0.1:3000/status/5xx/500 HTTP/1.1
+content-type: application/json
+
+{}
+
+###
+
+GET http://127.0.0.1:3000/status/5xx/501 HTTP/1.1
+content-type: application/json
+
+{}
+
+###
+
+POST http://127.0.0.1:3000/status/5xx/501 HTTP/1.1
+content-type: application/json
+
+{}
+
+
+###
+
+GET http://127.0.0.1:3000/status/5xx/502 HTTP/1.1
+content-type: application/json
+
+{}
+
+###
+
+POST http://127.0.0.1:3000/status/5xx/502 HTTP/1.1
+content-type: application/json
+
+{}
+
