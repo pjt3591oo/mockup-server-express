@@ -11,6 +11,7 @@ const websocket = require('../websocket');
 
 const debug = require('debug')('temp-server:server');
 const http = require('http');
+const { CLOSE_REASON_PROTOCOL_ERROR } = require('websocket/lib/WebSocketConnection');
 
 /**
  * Get port from environment and store in Express.
@@ -39,7 +40,7 @@ console.log(`\u001b[1;32m📗: HTTP      server port on : ${HTTP_PORT}`)
 console.log(`\u001b[1;32m📗: WebSocket server port on : ${HTTP_PORT}`)
 console.log(`\u001b[1;32m📗: socket.io server port on : ${SOCKET_IO_PORT}`)
 console.log(`\u001b[1;32m📗: gRPC      server port on : ${GRPC_PORT}`)
-console.log('\033[37m')
+console.log('\u001b[0m');
 
 /**
  * Listen on provided port, on all network interfaces.

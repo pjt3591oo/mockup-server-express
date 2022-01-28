@@ -26,6 +26,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', (req, res) => {
+
   let { name, age } = req.body;
   let data = makeData(name, age);
   temp.push(data);

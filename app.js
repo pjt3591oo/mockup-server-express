@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const loggerWinston = require('./utils/logger');
 const cors = require('cors');
 
 const booksRouter = require('./routes/books');
@@ -22,6 +23,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// 미들웨어
+app.use('/', (req, res, next) => {
+  loggerWinston.debug('[middleware] 미들웨어');
+  loggerWinston.info(req.headers);
+  // loggerWinston.info('info 메시지');
+  // loggerWinston.error('error 메시지');
+  // loggerWinston.warn('warn 메시지');
+  // loggerWinston.http('http 메시지'); 
+  // loggerWinston.debug('debug 메시지');
+
+  next();
+})
 
 app.use('/book', booksRouter);
 app.use('/user', usersRouter);

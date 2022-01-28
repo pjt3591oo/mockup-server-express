@@ -1,6 +1,11 @@
 const socket = require("socket.io");
+const http = require("http");
 
 function init(httpServer) {
+  if (!httpServer) {
+    httpServer = http.createServer();
+    httpServer.listen(4000);
+  }
 
   const io = socket(httpServer);
   

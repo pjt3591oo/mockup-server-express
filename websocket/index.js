@@ -1,6 +1,12 @@
 const WebSocket  = require("ws");
+const http = require('http');
 
 function init(httpServer) {
+  if (!httpServer) {
+    httpServer = http.createServer();
+    httpServer.listen(3000);
+  }
+  
   const wsServer = new WebSocket.Server({
     server: httpServer
   });
