@@ -8,10 +8,10 @@ function init(httpServer) {
   // io.adapter(require("socket.io-redis")({ host: "localhost", port: 6379 }));
 
   io.on('connection', (socket) => {
-    console.log('connected socketId: ', socket.id);
+    console.log('[socket.io] connected socketId: ', socket.id);
     socket.on('ping', data => {
-      console.log(`[receive] ping: ${data}`)
-      socket.emit('pong', 'pong pong pong');
+      console.log(`[socket.io] receive ping: ${data}`)
+      socket.emit('pong', `${new Date().getTime()} pong pong pong`);
     })
   })
 }

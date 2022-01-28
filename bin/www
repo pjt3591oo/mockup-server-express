@@ -5,8 +5,10 @@
  */
 
 const app = require('../app');
-const socket = require('../socket');
+const socketio = require('../socket');
 const grpc = require('../grpc');
+const websocket = require('../websocket');
+
 const debug = require('debug')('temp-server:server');
 const http = require('http');
 
@@ -15,6 +17,7 @@ const http = require('http');
  */
 
 const HTTP_PORT = normalizePort(process.env.PORT || '3000');
+const SOCKET_IO_PORT = normalizePort(process.env.SOCKET_IO_PORT || '4000');
 const GRPC_PORT = normalizePort(process.env.GRPC_PORT || '50051');
 
 app.set('port', HTTP_PORT);
@@ -24,11 +27,17 @@ app.set('port', HTTP_PORT);
  */
 
 const server = http.createServer(app);
-socket(server);
+const serverForSocketio = http.createServer();
+
+serverForSocketio.listen(SOCKET_IO_PORT)
+
+socketio(serverForSocketio);
+websocket(server);
 grpc();
 
 console.log(`\u001b[1;32m📗: HTTP      server port on : ${HTTP_PORT}`)
 console.log(`\u001b[1;32m📗: WebSocket server port on : ${HTTP_PORT}`)
+console.log(`\u001b[1;32m📗: socket.io server port on : ${SOCKET_IO_PORT}`)
 console.log(`\u001b[1;32m📗: gRPC      server port on : ${GRPC_PORT}`)
 console.log('\033[37m')
 
