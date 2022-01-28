@@ -5,27 +5,42 @@
 * 제공하는 프로토콜
 
 ```
-http
-websocket
-grpc
+http      :  3000
+websocket :  3000
+socket.io :  4000
+grpc      :  50051
 ```
+
+프로토콜 마다 클라이언트는 `client/` 아래에 구현되어 있습니다.
 
 * http endpoint
 
-해당 프로젝트는 2개의 엔드 포인트를 제공합니다
+해당 프로젝트는 3개의 엔드 포인트를 제공합니다
 
 ```
 /user
 
 /book
+
+/status
 ```
 
-해당 서버의 스펙은 `api.http` 명시되어 있으며 Visual Studio Code의 `RestClient` 플러그인으로 사용가능 합니다.
+HTTP 서버의 스펙은 `api.http` 명시되어 있으며 Visual Studio Code의 `RestClient` 플러그인으로 사용가능 합니다.
 
-* run
+* run server
 
+```bash
+$ npm i # 의존성 모듈 설치
+
+$ npm start # 모든서버 실행
 ```
-$ npm i
 
-$ npm start
+* run client
+
+```bash
+$ npm run client:websocket
+
+$ npm run client:socketio
+
+$ npm run client:grpc
 ```

@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "client:websocket": "node client/websocket.js",
+    "client:socketio": "node client/socketio.js",
+    "client:grpc": "node client/grpc.js"
   },
   "dependencies": {
     "@grpc/grpc-js": "^1.5.0",

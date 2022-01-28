@@ -5,13 +5,13 @@
  */
 
 const app = require('../app');
-const socketio = require('../socket');
-const grpc = require('../grpc');
-const websocket = require('../websocket');
+
+const {
+  socketio, websocket, grpc
+} = require('../other');
 
 const debug = require('debug')('temp-server:server');
 const http = require('http');
-const { CLOSE_REASON_PROTOCOL_ERROR } = require('websocket/lib/WebSocketConnection');
 
 /**
  * Get port from environment and store in Express.
