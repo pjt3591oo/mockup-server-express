@@ -50,3 +50,26 @@ $ npm run client:rpc
 
 $ npm run client:json-rpc
 ```
+
+RPC, JSON-RPC는 curl을 이용하여 HTTP 통신으로 요청가능 합니다.
+
+```sh
+$ curl --location \
+--request POST 'localhost:3000/rpc' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "action": "ping"
+}'
+```
+
+```sh
+$ curl --location \
+--request POST 'localhost:3000/json-rpc' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "jsonrpc": "2.0", 
+  "method": "echo", 
+  "params": {"text": "hello world"}, 
+  "id": null
+}'
+```
