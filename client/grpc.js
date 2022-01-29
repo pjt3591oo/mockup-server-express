@@ -18,7 +18,7 @@ const protoDescriptor = grpc.loadPackageDefinition(packageDefinition);
 const routes = protoDescriptor.helloworld;
 
 function main() {
-  var client = new routes.Greeter('localhost:50051',
+  var client = new routes.Greeter('localhost:5000',
                                        grpc.credentials.createInsecure());
   client.sayHello({name: 'you'}, function(err, response) {
     console.log('Greeting:', response.message);

@@ -32,12 +32,15 @@ const serverForSocketio = http.createServer();
 
 serverForSocketio.listen(SOCKET_IO_PORT)
 
+// FIXME: JSON-RPC와 RPC는 app.js에서 등록한다.
 socketio(serverForSocketio);
 websocket(server);
 grpc();
 
 console.log(`\u001b[1;32m📗: HTTP      server port on : ${HTTP_PORT}`)
 console.log(`\u001b[1;32m📗: WebSocket server port on : ${HTTP_PORT}`)
+console.log(`\u001b[1;32m📗: JSON-RPC  server port on : ${HTTP_PORT}`)
+console.log(`\u001b[1;32m📗: RPC       server port on : ${HTTP_PORT}`)
 console.log(`\u001b[1;32m📗: socket.io server port on : ${SOCKET_IO_PORT}`)
 console.log(`\u001b[1;32m📗: gRPC      server port on : ${GRPC_PORT}`)
 console.log('\u001b[0m');

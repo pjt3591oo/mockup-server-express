@@ -7,6 +7,8 @@
 ```
 http      :  3000
 websocket :  3000
+JSON-RPC  :  3000
+RPC       :  3000
 socket.io :  4000
 grpc      :  50051
 ```
@@ -43,4 +45,8 @@ $ npm run client:websocket
 $ npm run client:socketio
 
 $ npm run client:grpc
+
+$ npm run client:rpc
+
+$ npm run client:json-rpc
 ```

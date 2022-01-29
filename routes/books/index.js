@@ -1,4 +1,5 @@
 const express = require('express');
+const logger = require('../../utils/logger');
 const router = express.Router();
 
 let temp = [
@@ -33,6 +34,7 @@ router.get('/:id', function(req, res, next) {
 
 router.post('/', (req, res) => {
   let { title, author } = req.body;
+  logger.debug(`title: ${title}, author: ${author}`)
   let data = makeData(title, author);
   temp.push(data);
 

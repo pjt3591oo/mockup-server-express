@@ -10,6 +10,10 @@ const booksRouter = require('./routes/books');
 const usersRouter = require('./routes/users');
 const statusRouter = require('./routes/status');
 
+const {
+  rpc, jsonrpc
+} = require('./other');
+
 const app = express();
 
 app.use(cors());
@@ -37,12 +41,16 @@ app.use('/', (req, res, next) => {
   next();
 })
 
+jsonrpc(app);
+rpc(app);
+
 app.use('/book', booksRouter);
 app.use('/user', usersRouter);
 app.use('/status', statusRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
+  console.log('[middleware] catch 404 and forward to error handler');
   next(createError(404));
 });
 
