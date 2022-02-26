@@ -31,6 +31,10 @@ grpc      :  50051
   GET  /session 로그인 상태 확인, 유저정보 조회
   POST /session/logout 로그아웃
   
+  POST /jwt 로그인
+  GET  /jwt 로그인 상태 확인, 유저정보 조회
+  POST /jwt/logout 로그아웃
+
 /status
 ```
 

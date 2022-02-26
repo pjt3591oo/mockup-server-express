@@ -28,7 +28,7 @@ exports.sessionStrategyPassport = () => {
     usernameField: 'id',
     passwordField: 'pw',
     passReqToCallback: true //인증을 수행하는 인증 함수로 HTTP request를 그대로  전달할지 여부를 결정한다
-  }, function (req, id, pw, done) {
+  }, (req, id, pw, done) => {
     loggerWinston.debug('[SESSION PASSPORT] 인증전략 실행')
     loggerWinston.debug(`ID: ${id}, ${pw}`)
     const user = authService.find(id, pw)
