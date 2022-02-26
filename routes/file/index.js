@@ -16,14 +16,22 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage })
 
-const files = [{
-  id: 0, name: 'image.png', path: '/',
-}]
+// {id: 0, name: 'image.png', path: '/'}
+const files = [];
 
 router.post('/', upload.single('file'), (req, res) => {
   console.log(req.file);
-
-  return res.status(201).json(req.files)
+  const file = {
+    id: files.length,
+    name: req.file.filename,
+    path: req.file.path
+  }
+  files.push(file);
+  return res.status(201).json(file)
 });
+
+router.get('/', (req, res) => {
+  return res.status(200).json(files);
+})
 
 module.exports = router;

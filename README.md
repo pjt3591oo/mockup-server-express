@@ -17,7 +17,7 @@ grpc      :  50051
 
 * http endpoint
 
-해당 프로젝트는 5개의 엔드 포인트를 제공합니다
+해당 프로젝트는 6개의 엔드 포인트를 제공합니다
 
 ```
 /user
@@ -34,6 +34,8 @@ grpc      :  50051
   POST /jwt 로그인
   GET  /jwt 로그인 상태 확인, 유저정보 조회
   POST /jwt/logout 로그아웃
+
+/file
 
 /status
 ```
