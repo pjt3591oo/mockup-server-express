@@ -11,6 +11,7 @@ const usersRouter = require('./routes/users');
 const statusRouter = require('./routes/status');
 const newsRouter = require('./routes/news');
 const authRouter = require('./routes/auth');
+const fileRouter = require('./routes/file');
 
 const {
   rpc, jsonrpc
@@ -29,6 +30,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'upload')));
 
 // 미들웨어
 app.use('/', (req, res, next) => {
@@ -50,6 +52,7 @@ app.use('/book', booksRouter);
 app.use('/user', usersRouter);
 app.use('/news', newsRouter);
 app.use('/auth', authRouter);
+app.use('/file', fileRouter);
 app.use('/status', statusRouter);
 
 // catch 404 and forward to error handler
