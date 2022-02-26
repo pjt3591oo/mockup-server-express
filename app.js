@@ -10,6 +10,7 @@ const booksRouter = require('./routes/books');
 const usersRouter = require('./routes/users');
 const statusRouter = require('./routes/status');
 const newsRouter = require('./routes/news');
+const authRouter = require('./routes/auth');
 
 const {
   rpc, jsonrpc
@@ -31,8 +32,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // 미들웨어
 app.use('/', (req, res, next) => {
-  loggerWinston.debug('[middleware] 미들웨어');
-  loggerWinston.info(req.headers);
+  // loggerWinston.debug('[middleware] 미들웨어');
+  // loggerWinston.info(req.headers);
   // loggerWinston.info('info 메시지');
   // loggerWinston.error('error 메시지');
   // loggerWinston.warn('warn 메시지');
@@ -48,6 +49,7 @@ rpc(app);
 app.use('/book', booksRouter);
 app.use('/user', usersRouter);
 app.use('/news', newsRouter);
+app.use('/auth', authRouter);
 app.use('/status', statusRouter);
 
 // catch 404 and forward to error handler
