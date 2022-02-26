@@ -9,6 +9,7 @@ const cors = require('cors');
 const booksRouter = require('./routes/books');
 const usersRouter = require('./routes/users');
 const statusRouter = require('./routes/status');
+const newsRouter = require('./routes/news');
 
 const {
   rpc, jsonrpc
@@ -46,6 +47,7 @@ rpc(app);
 
 app.use('/book', booksRouter);
 app.use('/user', usersRouter);
+app.use('/news', newsRouter);
 app.use('/status', statusRouter);
 
 // catch 404 and forward to error handler
