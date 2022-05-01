@@ -19,10 +19,13 @@ router.get('/page', function(req, res, next) {
 })
 
 router.get('/', function(req, res, next) {
-  return res.status(200).json({
-    total: temp.length,
-    results: temp
-  })
+  temp.push(makeData('mung5', 5));
+  setTimeout(() => {
+    return res.status(200).json({
+      total: temp.length,
+      results: temp
+    })
+  }, 1500)
 });
 
 router.post('/', (req, res) => {

@@ -1,0 +1,26 @@
+head 
+  title 멍개 로그인 완료
+  link(rel='stylesheet', href='/stylesheets/oauth2.0/style.css')
+
+h1 [client service] Authentication Server 인증완료
+
+input#code(type="hidden", name="code", value=code)
+
+a(href="/auth2.0/test/signin") < 로그인
+
+div.form
+  label clientId
+  input#clientId(type='text', placeholder="client id")
+
+div.form
+  label secretId
+  input#clientSecret(type='text', placeholder="client secret")
+
+div.form
+  label 액세스토큰
+  input#accessToken(type='text' disabled)
+
+div
+  button#submit-btn 토큰받아오기
+
+script(src='/javascripts/oauth2.0/tester/signinSuccess.js')

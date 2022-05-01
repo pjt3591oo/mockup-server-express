@@ -11,6 +11,7 @@ const usersRouter = require('./routes/users');
 const statusRouter = require('./routes/status');
 const newsRouter = require('./routes/news');
 const authRouter = require('./routes/auth');
+const auth2Router = require('./routes/auth2.0');
 const fileRouter = require('./routes/file');
 
 const {
@@ -41,7 +42,6 @@ app.use('/', (req, res, next) => {
   // loggerWinston.warn('warn 메시지');
   // loggerWinston.http('http 메시지'); 
   // loggerWinston.debug('debug 메시지');
-
   next();
 })
 
@@ -52,6 +52,7 @@ app.use('/book', booksRouter);
 app.use('/user', usersRouter);
 app.use('/news', newsRouter);
 app.use('/auth', authRouter);
+app.use('/auth2.0', auth2Router);
 app.use('/file', fileRouter);
 app.use('/status', statusRouter);
 

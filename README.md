@@ -17,7 +17,7 @@ grpc      :  50051
 
 * http endpoint
 
-해당 프로젝트는 6개의 엔드 포인트를 제공합니다
+해당 프로젝트는 6개의 엔드 포인트와 1개의 oauth2.0 flow가 구현된 서버를 제공한다.
 
 ```
 /user
@@ -38,6 +38,10 @@ grpc      :  50051
 /file
 
 /status
+
+/auth2.0
+  GET /auth2.0/console authentication server - console
+  GET /auth2.0/test/signin authentication server를 이용한 client 접근 테스트
 ```
 
 HTTP 서버의 스펙은 `api.http` 명시되어 있으며 Visual Studio Code의 `RestClient` 플러그인으로 사용가능 합니다.

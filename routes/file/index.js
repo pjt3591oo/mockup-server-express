@@ -21,6 +21,7 @@ const files = [];
 
 router.post('/', upload.single('file'), (req, res) => {
   console.log(req.file);
+  console.log(req.files);
   const file = {
     id: files.length,
     name: req.file.filename,
@@ -31,7 +32,7 @@ router.post('/', upload.single('file'), (req, res) => {
 });
 
 router.get('/', (req, res) => {
-  return res.status(200).json(files);
+  return res.status(200).json([...files].reverse());
 })
 
 module.exports = router;

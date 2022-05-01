@@ -1,0 +1,19 @@
+head 
+  title Authentication Server
+  link(rel='stylesheet', href='/stylesheets/oauth2.0/style.css')
+
+h1 [Authentication Server] 로그인
+
+div
+  h2 멍개의 인증서버 입니다.
+
+div.form
+  label email
+  input#email(type='text', placeholder="email를 입력하세요." value="mung1@mung.com")
+
+div
+  button#submit-btn 로그인
+
+p #{isExist}
+
+script(src='/javascripts/oauth2.0/signin.js')

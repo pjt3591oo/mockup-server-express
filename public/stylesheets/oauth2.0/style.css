@@ -1,0 +1,46 @@
+.card {
+  padding: 20px
+}
+
+h1, h2, h3 {
+  color: #424242;
+}
+
+button,
+input {
+  padding: 12px;
+  width: 380px;
+  border-radius: 5px;
+  border: 1px solid #c3c3c3;
+  font-size: 18px;
+}
+
+button#submit-btn {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+}
+
+.form {
+  display: flex;
+  width: 450px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+menu button {
+  width: 90px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+#submit-btn {
+  margin-left: 20px;
+  width: 450px;
+  cursor: pointer;
+}
+
+p {
+  color: #838383;
+}

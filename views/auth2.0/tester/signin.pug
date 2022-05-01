@@ -1,0 +1,14 @@
+head 
+  title 멍개 계정으로 로그인
+  link(rel='stylesheet', href='/stylesheets/oauth2.0/style.css')
+
+h1 [client service] 로그인
+
+div.form
+  label clientId
+  input#clientId(type='text', placeholder="client id")
+
+div
+  button#submit-btn 멍개 서비스로 로그인하기
+
+script(src='/javascripts/oauth2.0/tester/signin.js')

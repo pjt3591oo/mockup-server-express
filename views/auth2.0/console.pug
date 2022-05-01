@@ -1,0 +1,34 @@
+head 
+  title Authentication Server
+  link(rel='stylesheet', href='/stylesheets/oauth2.0/style.css')
+
+h1 [Authentication Server] 콘솔 - 어플리케이션 등록
+
+div.card
+  h2 웹 어플리케이션 이름
+  input#name(placeholder="웹 어플리케이션의 이름을 입력하세요.", value="sns service")
+  p OAuth2.0 클라이언트 이름입니다. 이 이름은 콘솔에서 클라이언트를 식별하는 용도로만 사용되며 최종 사용자에게 표시되지 않습니다.
+
+div.card
+  h2 승인된 자바스크립트 원본
+  p 브라우저 요청에 사용
+  input#allowUrl(placeholder="http://127.0.0.1" value="소셜 로그인 웹 서비스")
+
+div.card
+  h2 승인된 리다이렉션 URI 
+  p 웹 서버가 요청에 사용
+  input#redirectUri(placeholder="로그인 성공시 code를 전달받을 URI" value="http://localhost:3000/auth2.0/test/success/callback")
+
+div.card
+  button#submit-btn 등록
+
+dialog#message-box
+  form(method="disalog" onClick='(e) => e.preventDefault()')
+    h1#msg-title 웹 어플리케이션 등록완료
+    h3#clientId 
+    h3#clientSecret
+    menu
+      button 취소
+      button 확인
+
+script(src='/javascripts/oauth2.0/console.js')
